@@ -33,6 +33,25 @@
             {"@type": "ListItem","position": 1,"name": "Cheap Flights","item": "https://brightlane.github.io/Instant-Savings-On-Flights/"},
             {"@type": "ListItem","position": 2,"name": "NYC Cancun 2026 Deals"}
           ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Instant Savings On Flights",
+          "url": "https://brightlane.github.io/Instant-Savings-On-Flights/",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-215-757-0000",
+            "contactType": "customer service",
+            "areaServed": "US",
+            "availableLanguage": ["English"]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Langhorne",
+            "addressRegion": "PA",
+            "postalCode": "19047",
+            "addressCountry": "US"
+          }
         }
       ]
     }
@@ -43,52 +62,58 @@
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;max-width:1200px;margin:0 auto;padding:20px;color:var(--text);background:var(--bg);}
     
-    /* HEADER WITH CLICKABLE HEADLINE + IMAGES */
-    header{position:relative;text-align:center;padding:30px 20px;background:linear-gradient(135deg,#fef3c7,#fde68a,#f59e0b);border-radius:20px;margin-bottom:30px;box-shadow:var(--shadow);}
+    /* HEADER */
+    header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#fef3c7,#fde68a,#f59e0b);border-radius:20px;margin-bottom:30px;box-shadow:var(--shadow);}
     .hero-images{display:flex;justify-content:center;gap:15px;margin-bottom:20px;flex-wrap:wrap;}
     .hero-img{position:relative;display:inline-block;width:120px;height:80px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s;}
     .hero-img img{width:100%;height:100%;object-fit:cover;}
     .hero-img:hover{transform:scale(1.05);}
-    
-    /* CLICKABLE H1 */
     h1{font-size:clamp(1.8rem,4vw,3rem);color:#1e293b;margin:10px 0 20px 0;}
     h1 a{color:inherit;text-decoration:none;font-weight:900;display:block;padding:15px 30px;background:rgba(255,255,255,.9);border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,.15);transition:all .3s;}
     h1 a:hover{background:#fff;box-shadow:0 8px 25px rgba(0,0,0,.2);transform:translateY(-2px);}
-    
     .subheadline{font-size:1.3rem;color:#444;margin-bottom:25px;font-weight:600;}
     .cta-button{display:inline-block;padding:18px 36px;background:linear-gradient(135deg,var(--success),#059669);color:#fff;text-decoration:none;border-radius:12px;font-weight:800;font-size:1.1rem;box-shadow:0 6px 20px rgba(16,185,129,.4);margin:8px;transition:.3s;}
     .cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(16,185,129,.6);}
     
-    .expertise{padding:35px;background:#f8fafc;border-radius:18px;margin:30px 0;text-align:center;}
     .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px;margin:45px 0;}
     .feature{padding:38px;border:2px solid #e5e7eb;border-radius:18px;box-shadow:var(--shadow);transition:all .3s;text-align:center;}
     .feature:hover{transform:translateY(-10px);box-shadow:0 25px 50px -12px rgba(0,0,0,.25);}
-    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:22px;margin:55px 0;}
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:22px;margin:55px 0 80px 0;}
     .faq-item{border:2px solid #e5e7eb;border-radius:18px;overflow:hidden;transition:.3s;box-shadow:var(--shadow);}
     .faq-question{padding:28px;background:linear-gradient(135deg,#f8fafc,#f1f5f9);cursor:pointer;font-weight:700;font-size:1.12rem;}
     .faq-answer{padding:28px;background:#fff;display:none;font-size:1.03rem;}
     .faq-item.active .faq-answer{display:block;}
     h2{font-size:1.55rem;color:var(--text);margin-bottom:18px;}
-    @media (max-width:768px){.hero-images{gap:10px;}.hero-img{width:100px;height:65px;}}
+    
+    /* FOOTER SECTIONS */
+    footer{margin-top:60px;padding:40px 20px;background:#f8fafc;border-radius:20px;}
+    .palmo-kid{text-align:center;padding:30px 0;background:#fff;border-radius:15px;margin-bottom:30px;box-shadow:var(--shadow);}
+    .palmo-kid img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,.15);}
+    .privacy-contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;text-align:center;}
+    .section{padding:25px;border-radius:15px;background:#fff;box-shadow:var(--shadow);}
+    .section h3{font-size:1.3rem;color:var(--accent);margin-bottom:15px;}
+    .contact-info{font-size:1.1rem;line-height:1.8;}
+    .skyscanner-link{color:var(--accent);font-weight:700;text-decoration:none;}
+    .skyscanner-link:hover{text-decoration:underline;}
+    
+    @media (max-width:768px){.hero-images{gap:10px;}.hero-img{width:100px;height:65px;}.privacy-contact{grid-template-columns:1fr;}}
     </style>
 </head>
 <body>
-    <!-- 🔥 CLICKABLE HERO: HEADLINE + 3 SMALL IMAGES 🔥 -->
+    <!-- HERO: CLICKABLE IMAGES + HEADLINE -->
     <header>
-        <!-- SMALL CLICKABLE FLIGHT IMAGES -->
         <div class="hero-images">
             <a href="https://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885" class="hero-img">
-                <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5f96b6cb3a5fe5de35ae4abcb5ef8c44969f2aed.jpg" alt="JFK Cancun Flight $199" loading="lazy">
+                <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/5f96b6cb3a5fe5de35ae4abcb5ef8c44969f2aed.jpg" alt="JFK to Cancun $199" loading="lazy">
             </a>
             <a href="https://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885" class="hero-img">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="NYC Airport Flights" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop" alt="NYC Airport Terminal" loading="lazy">
             </a>
             <a href="https://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885" class="hero-img">
-                <img src="https://images.unsplash.com/photo-1571896349840-64f414a3e2e0?w=300&h=200&fit=crop" alt="Cancun Beach Deals" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1571896349840-64f414a3e2e0?w=300&h=200&fit=crop" alt="Cancun Beach Resort" loading="lazy">
             </a>
         </div>
         
-        <!-- CLICKABLE HEADLINE BUTTON -->
         <h1>
             <a href="https://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885">
                 🔥 Cheap Flights NYC Cancun 2026
@@ -101,12 +126,6 @@
             <a class="cta-button" href="https://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885">Best Dates Calendar</a>
         </div>
     </header>
-
-    <!-- EEAT EXPERTISE -->
-    <section class="expertise">
-        <h2>Expert Guide by Benny "Palmo Kid" Palmarino</h2>
-        <p><strong>10+ years flight deal hunting</strong> from Langhorne, PA. Real strategies that saved 5K+ travelers thousands on NYC-Cancun trips.</p>
-    </section>
 
     <main>
         <section class="features">
@@ -142,6 +161,43 @@
             </div>
         </section>
     </main>
+
+    <!-- FOOTER: PALMO KID + PRIVACY + SKYSCANNER CONTACT -->
+    <footer>
+        <!-- PALMO KID AT BOTTOM -->
+        <div class="palmo-kid">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Benny Palmo Kid Palmarino" loading="lazy">
+            <h2>Benny "Palmo Kid" Palmarino</h2>
+            <p><strong>Flight Deals Expert</strong> | Langhorne, PA<br>10+ years helping travelers save thousands on flights worldwide.</p>
+        </div>
+
+        <!-- PRIVACY & CONTACT SECTIONS -->
+        <div class="privacy-contact">
+            <div class="section">
+                <h3>🔒 Privacy Policy</h3>
+                <p>We respect your privacy. No personal data collected. Affiliate links may be used for flight bookings. Cookies for analytics only. <a href="/privacy.html">Full policy →</a></p>
+            </div>
+            
+            <div class="section">
+                <h3>📞 Contact Information</h3>
+                <div class="contact-info">
+                    <strong>Instant Savings On Flights</strong><br>
+                    Langhorne, PA 19047<br>
+                    Phone: <a href="tel:+12157570000">+1-215-757-0000</a><br>
+                    Email: info@instantsavingsonflights.com
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>🌐 Skyscanner Support</h3>
+                <p>Need help with bookings? Contact <a href="https://www.skyscanner.com/contact-us" class="skyscanner-link" target="_blank">Skyscanner.com support page</a>.<br>24/7 customer service for all flight issues.</p>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid #e5e7eb;color:#666;font-size:.9rem;">
+            © 2026 Instant Savings On Flights - Benny Palmarino | <a href="https://www.skyscanner.com" target="_blank">Powered by Skyscanner</a>
+        </div>
+    </footer>
 
     <script>
     document.querySelectorAll('.faq-question').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('active')));
