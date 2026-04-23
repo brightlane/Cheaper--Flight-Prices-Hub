@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Brightlane Compatible SEO Generator</title>
+
+<style>
+body { font-family: Arial; max-width:900px; margin:auto; padding:20px; }
+button { padding:12px; margin:5px; background:#0770E3; color:white; border:none; cursor:pointer; }
+.box { background:#f4f6f8; padding:6px; margin:5px 0; font-size:12px; }
+textarea { width:100%; height:120px; }
+</style>
+</head>
+
+<body>
+
+<h1>Compatible SEO Generator (Brightlane System)</h1>
+
+<p>This generator outputs pages compatible with existing Brightlane GitHub workflows and SEO engines.</p>
+
+<button onclick="generate(100)">Generate 100 Pages</button>
+<button onclick="generate(200)">Generate 200 Pages</button>
+<button onclick="exportJSON()">Export JSON (for other generators)</button>
+<button onclick="downloadFiles()">Download HTML Files</button>
+
+<div id="log"></div>
+
+<script>
+
+/* =========================
+   SHARED BRIGHTLANE CONFIG
+   (matches other generators)
+========================= */
+
+const CONFIG = {
+  affiliate: "http://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885",
+
+  cities: [
+    "Tokyo","London","Paris","Dubai","Rome","Bangkok","Barcelona",
+    "New York","Chicago","Berlin","Madrid","Sydney","Singapore"
+  ],
+
+  intents: [
+    "cheap flights to",
+    "best time to fly to",
+    "flight deals for",
+    "budget travel guide for",
+    "how to save on flights to"
+  ]
+};
+
+/* =========================
+   DATA STORE (COMPATIBLE OUTPUT)
+========================= */
+
+let outputFiles = [];
+
+/* =========================
+   RANDOM HELPERS
+========================= */
+
+function rand(arr){
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+/* =========================
+   SEO ARTICLE ENGINE
+========================= */
+
+function buildArticle(city, intent, id){
+
+return `
+<!DOCTYPE html>
+<html>
+<head>
+<title>${intent} ${city} (2026 Guide)</title>
+<meta name="description" content="${intent} ${city} - complete flight savings guide.">
+</head>
+
+<body>
+
+<h1>${intent} ${city}</h1>
+
+<p>
+This article is part of the Brightlane SEO travel network. It explains pricing behavior, booking strategy, and how to reduce airfare costs for ${city}.
+</p>
+
+<h2>How Flight Pricing Works</h2>
+<p>
+Airlines use dynamic pricing systems that change fares based on demand, competition, and time to departure.
+</p>
+
+<h2>Best Ways to Save</h2>
+<ul>
+<li>Compare airlines before booking</li>
+<li>Use flexible travel dates</li>
+<li>Monitor price changes over time</li>
+</ul>
+
+<h2>Advanced Strategy</h2>
+<p>
+Experienced travelers often combine flexible routing, alternative airports, and off-peak travel to reduce costs significantly.
+</p>
+
+<a href="${CONFIG.affiliate}">
+Compare Live Flight Prices
+</a>
+
+<h3>Related Network Pages</h3>
+<ul>
+<li><a href="hub.html">Main Hub</a></li>
+<li><a href="${city.toLowerCase()}-guide.html">${city} Guide</a></li>
+</ul>
+
+<footer>
+<p>Brightlane SEO System • Article ID: ${id}</p>
+</footer>
+
+</body>
+</html>
+`;
+}
+
+/* =========================
+   GENERATE BATCH
+========================= */
+
+function generate(amount){
+
+outputFiles = [];
+
+let log = "";
+
+for(let i=0;i<amount;i++){
+
+  let city = rand(CONFIG.cities);
+  let intent = rand(CONFIG.intents);
+
+  let fileName = `${city.toLowerCase()}-${intent.replace(/\s/g,'-')}-${i}.html`;
+
+  outputFiles.push({
+    name: fileName,
+    content: buildArticle(city, intent, i),
+    city,
+    intent
+  });
+
+  log += `Generated: ${fileName}\n`;
+}
+
+document.getElementById("log").innerHTML =
+"<div class='box'>" + log + "</div>";
+}
+
+/* =========================
+   EXPORT JSON (FOR OTHER BRIGHTLANE MODULES)
+========================= */
+
+function exportJSON(){
+
+const json = JSON.stringify(outputFiles, null, 2);
+
+const blob = new Blob([json], {type:"application/json"});
+const a = document.createElement("a");
+a.href = URL.createObjectURL(blob);
+a.download = "brightlane-seo-output.json";
+a.click();
+}
+
+/* =========================
+   DOWNLOAD HTML FILES
+========================= */
+
+function downloadFiles(){
+
+outputFiles.forEach(f=>{
+  const blob = new Blob([f.content], {type:"text/html"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = f.name;
+  a.click();
+});
+
+}
+
+</script>
+
+</body>
+</html>
