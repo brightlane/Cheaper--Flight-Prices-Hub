@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>One File SEO Auto Engine</title>
+
+<style>
+body { font-family: Arial; max-width: 900px; margin:auto; padding:20px; }
+button { padding:12px; margin:5px; background:#0770E3; color:white; border:none; cursor:pointer; }
+pre { background:#f4f4f4; padding:10px; height:300px; overflow:auto; }
+</style>
+</head>
+
+<body>
+
+<h1>SEO Auto Engine (100 Page System)</h1>
+
+<button onclick="generate()">Generate 100 Pages</button>
+<button onclick="download()">Download Site Package</button>
+
+<pre id="log"></pre>
+
+<script>
+
+/* =========================
+   CONFIG
+========================= */
+
+const affiliate =
+"http://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885";
+
+const cities = [
+"Tokyo","London","Paris","Dubai","Rome",
+"Bangkok","Barcelona","New York","Chicago",
+"Berlin","Madrid","Sydney"
+];
+
+const intents = [
+"cheap-flights","flight-deals","best-time-to-book",
+"budget-travel","airfare-tips"
+];
+
+let pages = [];
+
+/* =========================
+   HELPERS
+========================= */
+
+function rand(arr){
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+/* =========================
+   SEO ARTICLE ENGINE
+========================= */
+
+function build(city,intent,id,links){
+
+let related = links.slice(0,5)
+  .map(l => `<li><a href="${l}">${l}</a></li>`).join("");
+
+return `<!DOCTYPE html>
+<html>
+<head>
+<title>${intent} ${city}</title>
+<meta name="description" content="Guide for ${intent} ${city}">
+</head>
+
+<body>
+
+<h1>${intent} ${city}</h1>
+
+<p>
+Airfare pricing for ${city} changes based on demand, seasonality, and airline algorithms.
+</p>
+
+<h2>Key Tips</h2>
+<ul>
+<li>Compare airlines</li>
+<li>Use flexible dates</li>
+<li>Monitor price changes</li>
+</ul>
+
+<h3>Related Pages</h3>
+<ul>${related}</ul>
+
+<a href="${affiliate}?id=${id}">Check Flight Prices</a>
+
+<footer>Page ID: ${id}</footer>
+
+</body>
+</html>`;
+}
+
+/* =========================
+   GENERATE 100 PAGES
+========================= */
+
+function generate(){
+
+pages = [];
+
+let log = "";
+let names = [];
+
+for(let i=1;i<=100;i++){
+
+  const city = rand(cities);
+  const intent = rand(intents);
+
+  const file = `${intent}-${city}-${i}.html`;
+
+  names.push(file);
+
+  pages.push({
+    name: file,
+    city,
+    intent
+  });
+
+  log += "Created: " + file + "\n";
+}
+
+document.getElementById("log").innerText = log;
+}
+
+/* =========================
+   DOWNLOAD PACKAGE
+========================= */
+
+function download(){
+
+// sitemap
+let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+pages.forEach(p=>{
+  sitemap += `<url><loc>https://your-site.github.io/pages/${p.name}</loc></url>`;
+});
+
+sitemap += `</urlset>`;
+
+// generate files
+pages.forEach((p,i)=>{
+
+  const html = build(
+    p.city,
+    p.intent,
+    i,
+    pages.map(x=>x.name)
+  );
+
+  const blob = new Blob([html], {type:"text/html"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = p.name;
+  a.click();
+
+});
+
+// download sitemap
+const sblob = new Blob([sitemap], {type:"application/xml"});
+const sa = document.createElement("a");
+sa.href = URL.createObjectURL(sblob);
+sa.download = "sitemap.xml";
+sa.click();
+
+}
+
+</script>
+
+</body>
+</html>
