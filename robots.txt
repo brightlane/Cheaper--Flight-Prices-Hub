@@ -1,0 +1,17 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block nothing important (keep full indexing power)
+
+# Sitemap location (IMPORTANT for Google)
+Sitemap: https://brightlane.github.io/sitemap.xml
+
+# Optional: prevent junk/system folders (if you use them later)
+Disallow: /node_modules/
+Disallow: /.github/
+Disallow: /cache/
+Disallow: /scripts/private/
+
+# Crawl delay (optional - usually ignored by Google)
+Crawl-delay: 0
