@@ -2,44 +2,95 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Home / hub page -->
+  <!-- 🏠 HOME -->
   <url>
-    <loc>https://brightlane.github.io/</loc>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/</loc>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main blog hub -->
+  <!-- ✈️ SEARCH / MAIN HUB -->
   <url>
-    <loc>https://brightlane.github.io/blog.html</loc>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/search.html</loc>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
-  <!-- Multi-page SEO section example -->
+  <!-- 💰 CORE HIGH-INTENT FLIGHT PAGES -->
   <url>
-    <loc>https://brightlane.github.io/blog1.html</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://brightlane.github.io/blog2.html</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Example generated pages (pattern for your system) -->
-  <url>
-    <loc>https://brightlane.github.io/pages/cheap-flights-tokyo-1.html</loc>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/cheap-flights.html</loc>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.95</priority>
   </url>
 
   <url>
-    <loc>https://brightlane.github.io/pages/flight-deals-london-2.html</loc>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/flight-deals.html</loc>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/last-minute-flights.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/international-flights.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 🚀 CONVERSION / AFFILIATE PAGES -->
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/best-flight-booking.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/travel-hacks.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 📘 CONTENT HUB -->
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/blog.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 📄 TRUST / SUPPORT -->
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/about.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/contact.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ⚠️ ERROR PAGE -->
+  <url>
+    <loc>https://brightlane.github.io/Cheaper--Flight-Prices-Hub/404.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 
 </urlset>
