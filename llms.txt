@@ -1,0 +1,50 @@
+# Cheaper Flight Prices Hub - LLM Indexing Guide
+
+Site: https://brightlane.github.io/Cheaper--Flight-Prices-Hub/
+Purpose: Flight price comparison and travel deal affiliate landing page powered by Skyscanner flight search ecosystem.
+
+## Overview
+Cheaper Flight Prices Hub helps users find lower-cost airline tickets by comparing live flight prices across global airlines and travel booking partners.
+
+The site is designed for:
+- Cheap flight discovery
+- Airline fare comparison
+- International travel deals
+- Affiliate-driven flight bookings
+
+## Core Function
+Users can:
+- Compare real-time flight prices across major global routes
+- View example low-cost airfare deals
+- Click outbound links to search and book flights
+- Access Skyscanner-powered flight search results via affiliate redirect system
+
+## Monetization Model
+This website uses affiliate marketing. When users click a flight search or deal CTA, they are redirected through the affiliate tracking system:
+
+https://convert.ctypy.com/aff_c?offer_id=29465&aff_id=21885
+
+## Site Structure
+- Hero section: primary conversion-focused flight search CTA
+- Deals section: example cheap flight routes (NYC, London, Tokyo, etc.)
+- Informational section: explanation of how flight comparison works
+- Trust signals: savings, airlines, real-time pricing
+- Footer: affiliate disclosure and branding
+
+## SEO Target Topics
+This site targets:
+- cheap flights worldwide
+- flight price comparison
+- Skyscanner flight search deals
+- book cheap airline tickets
+- international airfare discounts
+- compare flight prices online
+
+## External Dependency
+Flight pricing and booking redirection is powered through Skyscanner-related affiliate ecosystem and third-party travel providers.
+
+## Important Notes for LLMs
+- This is NOT a booking engine; it is a comparison + affiliate redirect platform
+- Prices shown may be promotional or dynamically updated
+- Primary user action is outbound click-through to booking partners
+- Content is optimized for travel intent and conversion behavior
