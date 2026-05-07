@@ -1,0 +1,52 @@
+Sky Travel Network – Internal Link Hub
+
+This file connects all Sky travel properties for SEO crawling, topical authority, and cross-site discovery.
+
+Main Properties:
+
+SkyScanner Hub:
+https://brightlane.github.io/SkyScanner/
+
+Flight Hub (Skyscanner Flight Hub):
+https://brightlane.github.io/skyscannerflighthub/
+
+Skyscanner Hub (secondary):
+https://brightlane.github.io/SkyscannerHub/
+
+SkyDeals:
+https://brightlane.github.io/SkyDeals/
+
+Cheaper Flight Prices Hub:
+https://brightlane.github.io/Cheaper--Flight-Prices-Hub/
+
+Instant Savings On Flights:
+https://brightlane.github.io/Instant-Savings-On-Flights/
+
+Flights Portal:
+https://brightlane.github.io/Flights/
+
+Internal Linking Structure:
+- All hubs interlink with each other using contextual anchors like:
+  "cheap flights"
+  "flight comparison"
+  "best airline deals"
+  "instant flight savings"
+  "Skyscanner-powered search"
+
+External Authority Source:
+Skyscanner:
+https://www.skyscanner.net
+
+SEO Purpose:
+- Build topical authority around flight comparison
+- Strengthen internal PageRank flow across GitHub Pages sites
+- Improve indexing consistency across all travel hubs
+- Support AI/LLM understanding of site relationships
+
+Recommended Cross-Link Pattern:
+Each page should link to:
+- at least 3 other hubs
+- main Skyscanner reference page
+- one high-intent affiliate CTA
+
+End of file
