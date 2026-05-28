@@ -1,24 +1,12 @@
 User-agent: *
 Allow: /
-
-# Block legacy generator and tool pages
 Disallow: /generator.html
 Disallow: /seo-engine-onefile.html
-
-# Block legacy scripts
 Disallow: /generator.js
 Disallow: /social-post-generator.js
-
-# Block legacy Python scripts
 Disallow: /vulture_titan_320k.py
 Disallow: /build.py
-
-# Block data and config files
 Disallow: /llms.txt
 Disallow: /travel-network-map.txt
-Disallow: /07d6f028f33b4f03aa0a0c0dc9825030.txt
-
-# Allow all multilingual route pages
 Crawl-delay: 1
-
 Sitemap: https://brightlane.github.io/Cheaper--Flight-Prices-Hub/sitemap.xml
