@@ -1,0 +1,37 @@
+name: CheaperFlights Vulture-Heartbeat
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */4 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: cheaperflights-vulture-heartbeat
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync Remote
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Run Build
+        run: python build.py
